@@ -2,7 +2,7 @@
 using Libraries;
 using System;
 using System.Collections.Generic;
-
+using System.Linq;
 
 namespace NorthWindServices
 {
@@ -12,20 +12,33 @@ namespace NorthWindServices
     {
         public bool delete(int id)
         {
-            throw new NotImplementedException();
+            var context = new DatabaseContext();
+            context.Suppliers.Remove(getSupplier(id));
+            return true;
+        }
+
+        public Libraries.Supplier getSupplier(int Id)
+        {
+            var context = new DatabaseContext();
+            return context.Suppliers.Find(Id);
+            
         }
 
         public bool modify(Libraries.Supplier supplier)
         {
-            throw new NotImplementedException();
+            var context = new DatabaseContext();
+            context.Suppliers.Remove(getSupplier(supplier.id));
+            context.Suppliers.Add(supplier);
+            return true;
         }
 
-        public List<Libraries.Supplier> searchSuppliers()
+        public List<Libraries.Supplier> searchSuppliers(string pattern)
         {
-            throw new NotImplementedException();
+            var context = new DatabaseContext();
+            return context.Suppliers.Where(c => c.name.Contains(pattern)).ToList<Libraries.Supplier>();
         }
 
-        public Libraries.Supplier seeDatails(int Id)
+        public Libraries.Supplier seeDetails(int Id)
         {
             throw new NotImplementedException();
         }

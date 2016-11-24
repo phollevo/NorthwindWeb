@@ -14,7 +14,7 @@ namespace NorthWindServices
 
         }
 
-        public virtual DbSet<Supplier> Suppliers { get; set; }
+        public virtual DbSet<Libraries.Supplier> Suppliers { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
