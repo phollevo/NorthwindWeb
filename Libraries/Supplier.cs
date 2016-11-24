@@ -16,9 +16,30 @@ namespace Libraries
         public string name { get; set; }
 
         [DataMember]
+        public string contactName { get; set; }
+
+        [DataMember]
+        public string contactTitle { get; set; }
+
+        [DataMember]
+        public string address { get; set; }
+
+        [DataMember]
+        public string ville { get; set; }
+
+        [DataMember]
+        public string region { get; set; }
+
+        [DataMember]
         public string country { get; set; }
 
         [DataMember]
-        public string contact { get; set; }
+        public string tel { get; set; }
+
+        [DataMember]
+        public string fax { get; set; }
+
+        [DataMember]
+        public string webSite { get; set; }
     }
 }
