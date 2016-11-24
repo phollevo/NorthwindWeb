@@ -10,6 +10,9 @@ namespace NorthWindServices
     public class Supplier
     {
         [DataMember]
+        public int id { get; set; }
+
+        [DataMember]
         public string name { get; set; }
 
         [DataMember]
