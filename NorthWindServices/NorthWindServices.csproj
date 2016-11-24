@@ -154,7 +154,6 @@
     <Compile Include="Invoice.cs">
       <DependentUpon>NorthWindBDD.tt</DependentUpon>
     </Compile>
-    <Compile Include="MyModule1.cs" />
     <Compile Include="NorthWindBDD.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
