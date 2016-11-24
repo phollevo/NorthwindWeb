@@ -3790,7 +3790,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
   list-style: none;
 }
 
-.subnav > nav{
+
+.subnav a:hover > ul > li{
     padding-left: 15;
     margin-bottom: 0;
     list-style: none;

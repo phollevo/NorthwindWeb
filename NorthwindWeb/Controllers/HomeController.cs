@@ -13,18 +13,25 @@ namespace NorthwindWeb.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult AddProvider()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Your Provider.";
 
-            return View();
+            return View("~/Views/Home/Provider.cshtml");
         }
 
-        public ActionResult Contact()
+        public ActionResult AddCat()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Your category page.";
 
-            return View();
+            return View("~/Views/Home/Category.cshtml"); ;
+        }
+
+        public ActionResult AddProd()
+        {
+            ViewBag.Message = "Your product page.";
+
+            return View("~/Views/Home/Product.cshtml"); ;
         }
     }
 }
