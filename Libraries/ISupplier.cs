@@ -5,10 +5,10 @@ using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NorthWindServices
+namespace Libraries
 {
     [ServiceContract]
-    interface ISupplier
+    public interface ISupplier
     {
         [OperationContract]
         List<Supplier> searchSuppliers();
