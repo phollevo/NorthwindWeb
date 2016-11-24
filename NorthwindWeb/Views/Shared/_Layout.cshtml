@@ -39,23 +39,25 @@
                 <font color="white" size="4">Products </font>
 
                 <ul class="nav">
-                            <li>@Html.ActionLink("Ajouter", "AddProd", "Home")</li>
-                            <li>@Html.ActionLink("Supprimer", "DelProd", "Home")</li>
+                    <li>@Html.ActionLink("Ajouter", "AddProduct", "Product")</li>
+                    <li>@Html.ActionLink("Supprimer", "DelProduct", "Product")</li>
                     
                 </ul>
 
                 <font color="white" size="4">Category </font>
 
                 <ul class="nav">
-                    <li>@Html.ActionLink("Ajouter", "AddCat", "Home")</li>
-                    <li>@Html.ActionLink("Supprimer", "DelCat", "Home")</li>
+                    <li>@Html.ActionLink("Ajouter", "AddCat", "Cat")</li>
+                    <li>@Html.ActionLink("Supprimer", "DelCat", "Cat")</li>
                 </ul>
             
                 <font color="white" size="4">Fournisseur</font>
 
                 <ul class="nav">
-                    <li>@Html.ActionLink("Ajouter", "AddProvider", "Home")</li>
-                    <li>@Html.ActionLink("Supprimer", "DelProvider", "Home")</li>
+                    @*<li>@Html.ActionLink("Ajouter", "AddProvider", "Home")</li>
+                    <li>@Html.ActionLink("Supprimer", "DelProvider", "Home")</li>*@
+                    <li>@Html.ActionLink("Ajouter", "SupplierResearch", "Supplier")</li>
+                    <li>@Html.ActionLink("Supprimer", "SupplierDetail", "Supplier")</li>
                 </ul>
            
       

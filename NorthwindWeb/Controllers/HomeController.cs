@@ -13,12 +13,13 @@ namespace NorthwindWeb.Controllers
             return View();
         }
 
-        public ActionResult AddProvider()
-        {
-            ViewBag.Message = "Your Provider.";
+        //public ActionResult AddProvider()
+        //{
+        //    ViewBag.Message = "Your Provider.";
 
-            return View("~/Views/Home/Provider.cshtml");
-        }
+        //    //return View("~/Views/Home/SupplierAdd.cshtml");
+        //    return null;
+        //}
 
         public ActionResult AddCat()
         {

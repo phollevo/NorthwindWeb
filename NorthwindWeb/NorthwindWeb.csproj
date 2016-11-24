@@ -174,8 +174,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CatController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\SupplierController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -217,10 +220,10 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\SupplierAdd.cshtml">
+    <Content Include="Views\Supplier\SupplierResearch.cshtml">
       <BrowseToURL>~/Provider</BrowseToURL>
     </Content>
-    <Content Include="Views\Home\CategoryAdd.cshtml">
+    <Content Include="Views\Cat\CategoryAdd.cshtml">
       <BrowseToURL>~/Category</BrowseToURL>
     </Content>
     <Content Include="Views\Home\Index.cshtml" />
@@ -244,10 +247,10 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Home\ProductAdd.cshtml" />
-    <Content Include="Views\Home\SupplierRem.cshtml" />
-    <Content Include="Views\Home\ProductRem.cshtml" />
-    <Content Include="Views\Home\CategoryRem.cshtml" />
+    <Content Include="Views\Product\ProductAdd.cshtml" />
+    <Content Include="Views\Supplier\SupplierDetail.cshtml" />
+    <Content Include="Views\Product\ProductRem.cshtml" />
+    <Content Include="Views\Cat\CategoryRem.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
