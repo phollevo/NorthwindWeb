@@ -119,7 +119,6 @@
       <DependentUpon>NorthWindBDD.edmx</DependentUpon>
       <LastGenOutput>NorthWindBDD.cs</LastGenOutput>
     </Content>
-    <Content Include="Service1.svc" />
     <Content Include="SupplierService.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -201,9 +200,6 @@
     <Compile Include="Region.cs">
       <DependentUpon>NorthWindBDD.tt</DependentUpon>
     </Compile>
-    <Compile Include="Service1.svc.cs">
-      <DependentUpon>Service1.svc</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shipper.cs">
       <DependentUpon>NorthWindBDD.tt</DependentUpon>
@@ -223,9 +219,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <Content Include="ApplicationInsights.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <EntityDeploy Include="NorthWindBDD.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>NorthWindBDD.Designer.cs</LastGenOutput>
