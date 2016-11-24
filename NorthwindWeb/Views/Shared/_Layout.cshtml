@@ -12,11 +12,9 @@
     <div class="navbar navbar-inverse navbar-static-top">
         <div class="container">
             <div class="navbar-static-top">
-                <ul class="nav navbar-left">
-                    <li>@Html.ActionLink("Northwind Web", "Index", "Home")</li>
+                    <h1><font color="white">CONTOSO - NORTHWIND</font></h1>
 
-                </ul>
-                @Html.Partial("_LoginPartial")
+                @*@Html.Partial("_LoginPartial")*@
             </div>
         </div>
     </div>
@@ -36,27 +34,31 @@
            
                 <ul class="nav">
                     <li>@Html.ActionLink("Acccueil", "Index", "Home")</li>
-                    <li>
-                        @Html.ActionLink("Produits", "Index", "Product")
+                </ul>   
+                
+                <font color="white" size="4">Products </font>
 
-                        <ul class="subnav">
-                            <li>@Html.ActionLink("Ajouter", "AddProd", "Product")</li>
-                            <li>@Html.ActionLink("Supprimer", "DelProd", "Product")</li>
-                        </ul>
-                    </li>  
-                    <li>@Html.ActionLink("Catégorie", "Contact", "Category")
-                        <ul class="subnav">
-                            <li>@Html.ActionLink("Ajouter", "AddCat", "Category")</li>
-                            <li>@Html.ActionLink("Supprimer", "DelCat", "Category")</li>
-                        </ul>
-                    </li>
-                    <li>@Html.ActionLink("Fournisseur", "Contact", "Provider")
-                        <ul class="subnav">
-                            <li>@Html.ActionLink("Ajouter", "AddProvider", "Product")</li>
-                            <li>@Html.ActionLink("Supprimer", "DelProvider", "Product")</li>
-                        </ul>
-                    </li>
+                <ul class="nav">
+                            <li>@Html.ActionLink("Ajouter", "AddProd", "Home")</li>
+                            <li>@Html.ActionLink("Supprimer", "DelProd", "Home")</li>
+                    
                 </ul>
+
+                <font color="white" size="4">Category </font>
+
+                <ul class="nav">
+                    <li>@Html.ActionLink("Ajouter", "AddCat", "Home")</li>
+                    <li>@Html.ActionLink("Supprimer", "DelCat", "Home")</li>
+                </ul>
+            
+                <font color="white" size="4">Fournisseur</font>
+
+                <ul class="nav">
+                    <li>@Html.ActionLink("Ajouter", "AddProvider", "Home")</li>
+                    <li>@Html.ActionLink("Supprimer", "DelProvider", "Home")</li>
+                </ul>
+           
+      
                 
             
         </div>
