@@ -1,11 +1,8 @@
-﻿using NorthWindServices;
-using NorthwindWeb;
+﻿
+using Libraries;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.ServiceModel;
-using System.Text;
+
 
 namespace NorthWindServices
 {
@@ -18,17 +15,17 @@ namespace NorthWindServices
             throw new NotImplementedException();
         }
 
-        public bool modify(Supplier supplier)
+        public bool modify(Libraries.Supplier supplier)
         {
             throw new NotImplementedException();
         }
 
-        public List<Supplier> searchSuppliers()
+        public List<Libraries.Supplier> searchSuppliers()
         {
             throw new NotImplementedException();
         }
 
-        public Supplier seeDetails(int Id)
+        public Libraries.Supplier seeDatails(int Id)
         {
             throw new NotImplementedException();
         }

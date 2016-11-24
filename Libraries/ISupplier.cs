@@ -5,7 +5,7 @@ using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NorthWindServices
+namespace Libraries
 {
     [ServiceContract]
     public interface ISupplier
