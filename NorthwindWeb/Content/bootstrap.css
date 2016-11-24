@@ -3786,9 +3786,17 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .nav {
   padding-left: 0;
-  margin-bottom: 0;
+  margin-bottom: 10;
   list-style: none;
 }
+
+.subnav > nav{
+    padding-left: 15;
+    margin-bottom: 0;
+    list-style: none;
+    display : block;
+}
+
 
 .nav:before,
 .nav:after {
