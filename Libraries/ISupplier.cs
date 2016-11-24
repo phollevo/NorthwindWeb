@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace NorthWindServices
 {
     [ServiceContract]
-    interface ISupplier
+    public interface ISupplier
     {
         [OperationContract]
         List<Supplier> searchSuppliers();
