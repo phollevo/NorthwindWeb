@@ -7,12 +7,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace NorthwindWeb
+namespace NorthWindServices
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Orders
+    public partial class Order
     {
         public long OrderID { get; set; }
         public string CustomerID { get; set; }

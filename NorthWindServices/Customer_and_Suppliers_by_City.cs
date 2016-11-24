@@ -7,16 +7,15 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace NorthwindWeb
+namespace NorthWindServices
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Quarterly_Orders
+    public partial class Customer_and_Suppliers_by_City
     {
-        public string CustomerID { get; set; }
-        public string CompanyName { get; set; }
         public string City { get; set; }
-        public string Country { get; set; }
+        public string CompanyName { get; set; }
+        public string ContactName { get; set; }
     }
 }

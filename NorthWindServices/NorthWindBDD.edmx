@@ -454,7 +454,7 @@ FROM [Quarterly Orders] AS [Quarterly Orders]</DefiningQuery>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="NorthwindModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Categories">
+        <EntityType Name="Category">
           <Key>
             <PropertyRef Name="CategoryID" />
           </Key>
@@ -471,14 +471,14 @@ FROM [Quarterly Orders] AS [Quarterly Orders]</DefiningQuery>
           <Property Name="CustomerID" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="CustomerTypeID" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
-        <EntityType Name="CustomerDemographics">
+        <EntityType Name="CustomerDemographic">
           <Key>
             <PropertyRef Name="CustomerTypeID" />
           </Key>
           <Property Name="CustomerTypeID" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="CustomerDesc" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="Customers">
+        <EntityType Name="Customer">
           <Key>
             <PropertyRef Name="CustomerID" />
           </Key>
@@ -494,7 +494,7 @@ FROM [Quarterly Orders] AS [Quarterly Orders]</DefiningQuery>
           <Property Name="Phone" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
           <Property Name="Fax" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="Employees">
+        <EntityType Name="Employee">
           <Key>
             <PropertyRef Name="EmployeeID" />
           </Key>
@@ -517,7 +517,7 @@ FROM [Quarterly Orders] AS [Quarterly Orders]</DefiningQuery>
           <Property Name="ReportsTo" Type="Int64" />
           <Property Name="PhotoPath" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="EmployeeTerritories">
+        <EntityType Name="EmployeeTerritory">
           <Key>
             <PropertyRef Name="EmployeeID" />
             <PropertyRef Name="TerritoryID" />
@@ -525,7 +525,7 @@ FROM [Quarterly Orders] AS [Quarterly Orders]</DefiningQuery>
           <Property Name="EmployeeID" Type="Int64" Nullable="false" />
           <Property Name="TerritoryID" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
-        <EntityType Name="Order_Details">
+        <EntityType Name="Order_Detail">
           <Key>
             <PropertyRef Name="OrderID" />
             <PropertyRef Name="ProductID" />
@@ -536,7 +536,7 @@ FROM [Quarterly Orders] AS [Quarterly Orders]</DefiningQuery>
           <Property Name="Quantity" Type="Int64" Nullable="false" />
           <Property Name="Discount" Type="Double" Nullable="false" />
         </EntityType>
-        <EntityType Name="Orders">
+        <EntityType Name="Order">
           <Key>
             <PropertyRef Name="OrderID" />
           </Key>
@@ -555,7 +555,7 @@ FROM [Quarterly Orders] AS [Quarterly Orders]</DefiningQuery>
           <Property Name="ShipPostalCode" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
           <Property Name="ShipCountry" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="Products">
+        <EntityType Name="Product">
           <Key>
             <PropertyRef Name="ProductID" />
           </Key>
@@ -570,14 +570,14 @@ FROM [Quarterly Orders] AS [Quarterly Orders]</DefiningQuery>
           <Property Name="ReorderLevel" Type="Int64" />
           <Property Name="Discontinued" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
-        <EntityType Name="Regions">
+        <EntityType Name="Region">
           <Key>
             <PropertyRef Name="RegionID" />
           </Key>
           <Property Name="RegionID" Type="Int64" Nullable="false" />
           <Property Name="RegionDescription" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
-        <EntityType Name="Shippers">
+        <EntityType Name="Shipper">
           <Key>
             <PropertyRef Name="ShipperID" />
           </Key>
@@ -585,7 +585,7 @@ FROM [Quarterly Orders] AS [Quarterly Orders]</DefiningQuery>
           <Property Name="CompanyName" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Phone" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="Suppliers">
+        <EntityType Name="Supplier">
           <Key>
             <PropertyRef Name="SupplierID" />
           </Key>
@@ -602,7 +602,7 @@ FROM [Quarterly Orders] AS [Quarterly Orders]</DefiningQuery>
           <Property Name="Fax" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
           <Property Name="HomePage" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="Territories">
+        <EntityType Name="Territory">
           <Key>
             <PropertyRef Name="TerritoryID" />
           </Key>
@@ -610,7 +610,7 @@ FROM [Quarterly Orders] AS [Quarterly Orders]</DefiningQuery>
           <Property Name="TerritoryDescription" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="RegionID" Type="Int64" Nullable="false" />
         </EntityType>
-        <EntityType Name="Alphabetical_list_of_products">
+        <EntityType Name="Alphabetical_list_of_product">
           <Key>
             <PropertyRef Name="ProductID" />
             <PropertyRef Name="ProductName" />
@@ -644,7 +644,7 @@ FROM [Quarterly Orders] AS [Quarterly Orders]</DefiningQuery>
           <Property Name="CompanyName" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ContactName" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="Invoices">
+        <EntityType Name="Invoice">
           <Key>
             <PropertyRef Name="OrderID" />
             <PropertyRef Name="ShipperName" />
@@ -679,7 +679,7 @@ FROM [Quarterly Orders] AS [Quarterly Orders]</DefiningQuery>
           <Property Name="Discount" Type="Double" Nullable="false" />
           <Property Name="Freight" Type="Decimal" Precision="18" Scale="0" />
         </EntityType>
-        <EntityType Name="Order_Subtotals">
+        <EntityType Name="Order_Subtotal">
           <Key>
             <PropertyRef Name="OrderID" />
           </Key>
@@ -735,7 +735,7 @@ FROM [Quarterly Orders] AS [Quarterly Orders]</DefiningQuery>
           <Property Name="UnitsInStock" Type="Int64" />
           <Property Name="Discontinued" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
-        <EntityType Name="Quarterly_Orders">
+        <EntityType Name="Quarterly_Order">
           <Key>
             <PropertyRef Name="CustomerID" />
           </Key>
@@ -745,29 +745,29 @@ FROM [Quarterly Orders] AS [Quarterly Orders]</DefiningQuery>
           <Property Name="Country" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityContainer Name="NorthwindEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Categories" EntityType="Self.Categories" />
-          <EntitySet Name="CustomerCustomerDemo" EntityType="Self.CustomerCustomerDemo" />
-          <EntitySet Name="CustomerDemographics" EntityType="Self.CustomerDemographics" />
-          <EntitySet Name="Customers" EntityType="Self.Customers" />
-          <EntitySet Name="Employees" EntityType="Self.Employees" />
-          <EntitySet Name="EmployeeTerritories" EntityType="Self.EmployeeTerritories" />
-          <EntitySet Name="Order_Details" EntityType="Self.Order_Details" />
-          <EntitySet Name="Orders" EntityType="Self.Orders" />
-          <EntitySet Name="Products" EntityType="Self.Products" />
-          <EntitySet Name="Regions" EntityType="Self.Regions" />
-          <EntitySet Name="Shippers" EntityType="Self.Shippers" />
-          <EntitySet Name="Suppliers" EntityType="Self.Suppliers" />
-          <EntitySet Name="Territories" EntityType="Self.Territories" />
-          <EntitySet Name="Alphabetical_list_of_products" EntityType="Self.Alphabetical_list_of_products" />
-          <EntitySet Name="Current_Product_List" EntityType="Self.Current_Product_List" />
-          <EntitySet Name="Customer_and_Suppliers_by_City" EntityType="Self.Customer_and_Suppliers_by_City" />
-          <EntitySet Name="Invoices" EntityType="Self.Invoices" />
-          <EntitySet Name="Order_Subtotals" EntityType="Self.Order_Subtotals" />
-          <EntitySet Name="Orders_Qry" EntityType="Self.Orders_Qry" />
+          <EntitySet Name="Categories" EntityType="Self.Category" />
+          <EntitySet Name="CustomerCustomerDemoes" EntityType="Self.CustomerCustomerDemo" />
+          <EntitySet Name="CustomerDemographics" EntityType="Self.CustomerDemographic" />
+          <EntitySet Name="Customers" EntityType="Self.Customer" />
+          <EntitySet Name="Employees" EntityType="Self.Employee" />
+          <EntitySet Name="EmployeeTerritories" EntityType="Self.EmployeeTerritory" />
+          <EntitySet Name="Order_Details" EntityType="Self.Order_Detail" />
+          <EntitySet Name="Orders" EntityType="Self.Order" />
+          <EntitySet Name="Products" EntityType="Self.Product" />
+          <EntitySet Name="Regions" EntityType="Self.Region" />
+          <EntitySet Name="Shippers" EntityType="Self.Shipper" />
+          <EntitySet Name="Suppliers" EntityType="Self.Supplier" />
+          <EntitySet Name="Territories" EntityType="Self.Territory" />
+          <EntitySet Name="Alphabetical_list_of_products" EntityType="Self.Alphabetical_list_of_product" />
+          <EntitySet Name="Current_Product_Lists" EntityType="Self.Current_Product_List" />
+          <EntitySet Name="Customer_and_Suppliers_by_Cities" EntityType="Self.Customer_and_Suppliers_by_City" />
+          <EntitySet Name="Invoices" EntityType="Self.Invoice" />
+          <EntitySet Name="Order_Subtotals" EntityType="Self.Order_Subtotal" />
+          <EntitySet Name="Orders_Qries" EntityType="Self.Orders_Qry" />
           <EntitySet Name="Product_Sales_for_1997" EntityType="Self.Product_Sales_for_1997" />
-          <EntitySet Name="Products_Above_Average_Price" EntityType="Self.Products_Above_Average_Price" />
-          <EntitySet Name="Products_by_Category" EntityType="Self.Products_by_Category" />
-          <EntitySet Name="Quarterly_Orders" EntityType="Self.Quarterly_Orders" />
+          <EntitySet Name="Products_Above_Average_Prices" EntityType="Self.Products_Above_Average_Price" />
+          <EntitySet Name="Products_by_Categories" EntityType="Self.Products_by_Category" />
+          <EntitySet Name="Quarterly_Orders" EntityType="Self.Quarterly_Order" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -776,7 +776,7 @@ FROM [Quarterly Orders] AS [Quarterly Orders]</DefiningQuery>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="NorthwindModelStoreContainer" CdmEntityContainer="NorthwindEntities">
           <EntitySetMapping Name="Categories">
-            <EntityTypeMapping TypeName="NorthwindModel.Categories">
+            <EntityTypeMapping TypeName="NorthwindModel.Category">
               <MappingFragment StoreEntitySet="Categories">
                 <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
                 <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
@@ -785,7 +785,7 @@ FROM [Quarterly Orders] AS [Quarterly Orders]</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="CustomerCustomerDemo">
+          <EntitySetMapping Name="CustomerCustomerDemoes">
             <EntityTypeMapping TypeName="NorthwindModel.CustomerCustomerDemo">
               <MappingFragment StoreEntitySet="CustomerCustomerDemo">
                 <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
@@ -794,7 +794,7 @@ FROM [Quarterly Orders] AS [Quarterly Orders]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CustomerDemographics">
-            <EntityTypeMapping TypeName="NorthwindModel.CustomerDemographics">
+            <EntityTypeMapping TypeName="NorthwindModel.CustomerDemographic">
               <MappingFragment StoreEntitySet="CustomerDemographics">
                 <ScalarProperty Name="CustomerTypeID" ColumnName="CustomerTypeID" />
                 <ScalarProperty Name="CustomerDesc" ColumnName="CustomerDesc" />
@@ -802,7 +802,7 @@ FROM [Quarterly Orders] AS [Quarterly Orders]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Customers">
-            <EntityTypeMapping TypeName="NorthwindModel.Customers">
+            <EntityTypeMapping TypeName="NorthwindModel.Customer">
               <MappingFragment StoreEntitySet="Customers">
                 <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
                 <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
@@ -819,7 +819,7 @@ FROM [Quarterly Orders] AS [Quarterly Orders]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Employees">
-            <EntityTypeMapping TypeName="NorthwindModel.Employees">
+            <EntityTypeMapping TypeName="NorthwindModel.Employee">
               <MappingFragment StoreEntitySet="Employees">
                 <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
@@ -843,7 +843,7 @@ FROM [Quarterly Orders] AS [Quarterly Orders]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="EmployeeTerritories">
-            <EntityTypeMapping TypeName="NorthwindModel.EmployeeTerritories">
+            <EntityTypeMapping TypeName="NorthwindModel.EmployeeTerritory">
               <MappingFragment StoreEntitySet="EmployeeTerritories">
                 <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
                 <ScalarProperty Name="TerritoryID" ColumnName="TerritoryID" />
@@ -851,7 +851,7 @@ FROM [Quarterly Orders] AS [Quarterly Orders]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Order_Details">
-            <EntityTypeMapping TypeName="NorthwindModel.Order_Details">
+            <EntityTypeMapping TypeName="NorthwindModel.Order_Detail">
               <MappingFragment StoreEntitySet="Order Details">
                 <ScalarProperty Name="OrderID" ColumnName="OrderID" />
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
@@ -862,7 +862,7 @@ FROM [Quarterly Orders] AS [Quarterly Orders]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Orders">
-            <EntityTypeMapping TypeName="NorthwindModel.Orders">
+            <EntityTypeMapping TypeName="NorthwindModel.Order">
               <MappingFragment StoreEntitySet="Orders">
                 <ScalarProperty Name="OrderID" ColumnName="OrderID" />
                 <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
@@ -882,7 +882,7 @@ FROM [Quarterly Orders] AS [Quarterly Orders]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Products">
-            <EntityTypeMapping TypeName="NorthwindModel.Products">
+            <EntityTypeMapping TypeName="NorthwindModel.Product">
               <MappingFragment StoreEntitySet="Products">
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
                 <ScalarProperty Name="ProductName" ColumnName="ProductName" />
@@ -898,7 +898,7 @@ FROM [Quarterly Orders] AS [Quarterly Orders]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Regions">
-            <EntityTypeMapping TypeName="NorthwindModel.Regions">
+            <EntityTypeMapping TypeName="NorthwindModel.Region">
               <MappingFragment StoreEntitySet="Regions">
                 <ScalarProperty Name="RegionID" ColumnName="RegionID" />
                 <ScalarProperty Name="RegionDescription" ColumnName="RegionDescription" />
@@ -906,7 +906,7 @@ FROM [Quarterly Orders] AS [Quarterly Orders]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Shippers">
-            <EntityTypeMapping TypeName="NorthwindModel.Shippers">
+            <EntityTypeMapping TypeName="NorthwindModel.Shipper">
               <MappingFragment StoreEntitySet="Shippers">
                 <ScalarProperty Name="ShipperID" ColumnName="ShipperID" />
                 <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
@@ -915,7 +915,7 @@ FROM [Quarterly Orders] AS [Quarterly Orders]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Suppliers">
-            <EntityTypeMapping TypeName="NorthwindModel.Suppliers">
+            <EntityTypeMapping TypeName="NorthwindModel.Supplier">
               <MappingFragment StoreEntitySet="Suppliers">
                 <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
                 <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
@@ -933,7 +933,7 @@ FROM [Quarterly Orders] AS [Quarterly Orders]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Territories">
-            <EntityTypeMapping TypeName="NorthwindModel.Territories">
+            <EntityTypeMapping TypeName="NorthwindModel.Territory">
               <MappingFragment StoreEntitySet="Territories">
                 <ScalarProperty Name="TerritoryID" ColumnName="TerritoryID" />
                 <ScalarProperty Name="TerritoryDescription" ColumnName="TerritoryDescription" />
@@ -942,7 +942,7 @@ FROM [Quarterly Orders] AS [Quarterly Orders]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Alphabetical_list_of_products">
-            <EntityTypeMapping TypeName="NorthwindModel.Alphabetical_list_of_products">
+            <EntityTypeMapping TypeName="NorthwindModel.Alphabetical_list_of_product">
               <MappingFragment StoreEntitySet="Alphabetical list of products">
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
                 <ScalarProperty Name="ProductName" ColumnName="ProductName" />
@@ -958,7 +958,7 @@ FROM [Quarterly Orders] AS [Quarterly Orders]</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Current_Product_List">
+          <EntitySetMapping Name="Current_Product_Lists">
             <EntityTypeMapping TypeName="NorthwindModel.Current_Product_List">
               <MappingFragment StoreEntitySet="Current Product List">
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
@@ -966,7 +966,7 @@ FROM [Quarterly Orders] AS [Quarterly Orders]</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Customer_and_Suppliers_by_City">
+          <EntitySetMapping Name="Customer_and_Suppliers_by_Cities">
             <EntityTypeMapping TypeName="NorthwindModel.Customer_and_Suppliers_by_City">
               <MappingFragment StoreEntitySet="Customer and Suppliers by City">
                 <ScalarProperty Name="City" ColumnName="City" />
@@ -976,7 +976,7 @@ FROM [Quarterly Orders] AS [Quarterly Orders]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Invoices">
-            <EntityTypeMapping TypeName="NorthwindModel.Invoices">
+            <EntityTypeMapping TypeName="NorthwindModel.Invoice">
               <MappingFragment StoreEntitySet="Invoices">
                 <ScalarProperty Name="ShipName" ColumnName="ShipName" />
                 <ScalarProperty Name="ShipAddress" ColumnName="ShipAddress" />
@@ -1006,13 +1006,13 @@ FROM [Quarterly Orders] AS [Quarterly Orders]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Order_Subtotals">
-            <EntityTypeMapping TypeName="NorthwindModel.Order_Subtotals">
+            <EntityTypeMapping TypeName="NorthwindModel.Order_Subtotal">
               <MappingFragment StoreEntitySet="Order Subtotals">
                 <ScalarProperty Name="OrderID" ColumnName="OrderID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Orders_Qry">
+          <EntitySetMapping Name="Orders_Qries">
             <EntityTypeMapping TypeName="NorthwindModel.Orders_Qry">
               <MappingFragment StoreEntitySet="Orders Qry">
                 <ScalarProperty Name="OrderID" ColumnName="OrderID" />
@@ -1046,7 +1046,7 @@ FROM [Quarterly Orders] AS [Quarterly Orders]</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Products_Above_Average_Price">
+          <EntitySetMapping Name="Products_Above_Average_Prices">
             <EntityTypeMapping TypeName="NorthwindModel.Products_Above_Average_Price">
               <MappingFragment StoreEntitySet="Products Above Average Price">
                 <ScalarProperty Name="ProductName" ColumnName="ProductName" />
@@ -1054,7 +1054,7 @@ FROM [Quarterly Orders] AS [Quarterly Orders]</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Products_by_Category">
+          <EntitySetMapping Name="Products_by_Categories">
             <EntityTypeMapping TypeName="NorthwindModel.Products_by_Category">
               <MappingFragment StoreEntitySet="Products by Category">
                 <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
@@ -1066,7 +1066,7 @@ FROM [Quarterly Orders] AS [Quarterly Orders]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Quarterly_Orders">
-            <EntityTypeMapping TypeName="NorthwindModel.Quarterly_Orders">
+            <EntityTypeMapping TypeName="NorthwindModel.Quarterly_Order">
               <MappingFragment StoreEntitySet="Quarterly Orders">
                 <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
                 <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
@@ -1089,7 +1089,7 @@ FROM [Quarterly Orders] AS [Quarterly Orders]</DefiningQuery>
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

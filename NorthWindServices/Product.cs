@@ -7,14 +7,22 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace NorthwindWeb
+namespace NorthWindServices
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Products_Above_Average_Price
+    public partial class Product
     {
+        public long ProductID { get; set; }
         public string ProductName { get; set; }
+        public Nullable<long> SupplierID { get; set; }
+        public Nullable<long> CategoryID { get; set; }
+        public string QuantityPerUnit { get; set; }
         public Nullable<decimal> UnitPrice { get; set; }
+        public Nullable<long> UnitsInStock { get; set; }
+        public Nullable<long> UnitsOnOrder { get; set; }
+        public Nullable<long> ReorderLevel { get; set; }
+        public string Discontinued { get; set; }
     }
 }

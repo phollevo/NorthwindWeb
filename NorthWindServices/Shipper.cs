@@ -7,14 +7,15 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace NorthwindWeb
+namespace NorthWindServices
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Product_Sales_for_1997
+    public partial class Shipper
     {
-        public string CategoryName { get; set; }
-        public string ProductName { get; set; }
+        public long ShipperID { get; set; }
+        public string CompanyName { get; set; }
+        public string Phone { get; set; }
     }
 }

@@ -7,12 +7,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace NorthwindWeb
+namespace NorthWindServices
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Alphabetical_list_of_products
+    public partial class Alphabetical_list_of_product
     {
         public long ProductID { get; set; }
         public string ProductName { get; set; }

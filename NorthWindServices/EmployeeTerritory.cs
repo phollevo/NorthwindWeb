@@ -7,14 +7,14 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace NorthwindWeb
+namespace NorthWindServices
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class CustomerDemographics
+    public partial class EmployeeTerritory
     {
-        public string CustomerTypeID { get; set; }
-        public string CustomerDesc { get; set; }
+        public long EmployeeID { get; set; }
+        public string TerritoryID { get; set; }
     }
 }

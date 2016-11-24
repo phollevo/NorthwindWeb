@@ -28,7 +28,7 @@ namespace NorthWindServices
             throw new NotImplementedException();
         }
 
-        public Supplier seeDatails(int Id)
+        public Supplier seeDetails(int Id)
         {
             throw new NotImplementedException();
         }

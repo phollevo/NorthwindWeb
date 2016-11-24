@@ -7,12 +7,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace NorthwindWeb
+namespace NorthWindServices
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Territories
+    public partial class Territory
     {
         public string TerritoryID { get; set; }
         public string TerritoryDescription { get; set; }
