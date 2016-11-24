@@ -109,6 +109,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CategorieService.svc" />
     <Content Include="NorthWindBDD.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>NorthWindBDD.edmx</DependentUpon>
@@ -125,6 +126,9 @@
   <ItemGroup>
     <Compile Include="Alphabetical_list_of_product.cs">
       <DependentUpon>NorthWindBDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CategorieService.svc.cs">
+      <DependentUpon>CategorieService.svc</DependentUpon>
     </Compile>
     <Compile Include="Category.cs">
       <DependentUpon>NorthWindBDD.tt</DependentUpon>
