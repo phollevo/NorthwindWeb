@@ -10,11 +10,15 @@ namespace Libraries
     [ServiceContract]
     public interface ISupplier
     {
-        [OperationContract]
-        List<Supplier> searchSuppliers();
 
         [OperationContract]
-        Supplier seeDatails(int Id);
+        Supplier getSupplier(int Id);
+
+        [OperationContract]
+        List<Supplier> searchSuppliers(string pattern);
+
+        [OperationContract]
+        Supplier seeDetails(int Id);
 
         [OperationContract]
         Boolean modify(Supplier supplier);
