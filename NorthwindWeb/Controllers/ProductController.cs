@@ -20,10 +20,17 @@ namespace NorthwindWeb.Controllers
             }
             //return View("~/Views/Home/SupplierRem.cshtml");
         }
-        //// GET: Product
-        //public ActionResult Index()
-        //{
-        //    return View();
-        //}
+
+        public ActionResult AddProduct()
+        {
+
+            return View("~/Views/Product/ProductAdd.cshtml");
+        }
+
+        public ActionResult DelProduct()
+        {
+            return View("~/Views/Product/ProductRem.cshtml");
+        }
+
     }
 }

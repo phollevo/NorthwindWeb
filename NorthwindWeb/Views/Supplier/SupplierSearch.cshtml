@@ -1,0 +1,46 @@
+﻿@model List<Libraries.Supplier>
+
+@*@{
+    ViewBag.Title = "About";
+}
+*@
+
+<div class="jumbotron">
+    <h1>Recherche d'un fournisseur</h1>
+
+    @using (Html.BeginForm("Search", "Supplier", FormMethod.Post))
+    {
+        <div class="thumbnail">
+            <h2>Critères de recherche</h2>
+                Nom : @Html.TextBox("search")
+                <input type="submit" value="Search"   />
+        
+        </div>
+    }
+
+    <div>
+        <table>
+            <tr>
+                <th style="min-width:150px">Nom</th> 
+                <th style="min-width:150px">Contact</th>
+                <th style="min-width:150px">Pays</th>
+                <th style="min-width:150px">Action</th>
+            </tr>
+           
+            @if(Model != null){
+          
+                foreach (var s in Model )
+                {
+                    <tr>
+                        <td>s.name</td>
+                        <td>s.contactName</td>
+                        <td>s.country</td>
+                        <td>TODO</td>
+                    </tr>
+                }
+            }
+
+        </table>
+    </div>
+    
+</div>

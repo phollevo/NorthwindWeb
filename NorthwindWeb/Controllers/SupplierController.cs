@@ -9,18 +9,41 @@ namespace NorthwindWeb.Controllers
     public class SupplierController : Controller
     {
 
+        [HttpPost]
+        public ActionResult Search(String search)
+        {
+            ServiceReference1.SupplierClient Client = new ServiceReference1.SupplierClient();
+            var suppliers = Client.searchSuppliers(search);
+
+            return View("~/Views/Supplier/SupplierSearch.cshtml", suppliers);
+        }
+
         public ActionResult SupplierRedirect(String AccessType)
         {
-            if (AccessType == "SupplierResearch")
+            if (AccessType == "SupplierSearch")
             {
-                return View("~/Views/Supplier/SupplierResearch.cshtml");
+
+                return View("~/Views/Supplier/SupplierSearch.cshtml");
             }
-            else
+            else 
             {
-                return View("~/Views/Supplier/SupplierDetail.cshtml");
+                return View("~/Views/Supplier/SupplierAdd.cshtml");
             }
             //return View("~/Views/Home/SupplierRem.cshtml");
         }
+
+     
+        public ActionResult SupplierAdd()
+        {
+
+            return View("~/Views/Supplier/SupplierAdd.cshtml"); 
+        }
+
+        public ActionResult SupplierSearch()
+        {
+            return View("~/Views/Supplier/SupplierSearch.cshtml");
+        }
+
         // GET: Supplier
         public ActionResult Index()
         {

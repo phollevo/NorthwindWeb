@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SupplierService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:50124/SupplierService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:50124/SupplierService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:50124/SupplierService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Libraries" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISupplier_getSupplier_InputMessage">
+    <wsdl:part name="parameters" element="tns:getSupplier" />
+  </wsdl:message>
+  <wsdl:message name="ISupplier_getSupplier_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getSupplierResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISupplier_searchSuppliers_InputMessage">
+    <wsdl:part name="parameters" element="tns:searchSuppliers" />
+  </wsdl:message>
+  <wsdl:message name="ISupplier_searchSuppliers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:searchSuppliersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISupplier_seeDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:seeDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISupplier_seeDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:seeDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISupplier_modify_InputMessage">
+    <wsdl:part name="parameters" element="tns:modify" />
+  </wsdl:message>
+  <wsdl:message name="ISupplier_modify_OutputMessage">
+    <wsdl:part name="parameters" element="tns:modifyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISupplier_delete_InputMessage">
+    <wsdl:part name="parameters" element="tns:delete" />
+  </wsdl:message>
+  <wsdl:message name="ISupplier_delete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISupplier">
+    <wsdl:operation name="getSupplier">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISupplier/getSupplier" message="tns:ISupplier_getSupplier_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISupplier/getSupplierResponse" message="tns:ISupplier_getSupplier_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="searchSuppliers">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISupplier/searchSuppliers" message="tns:ISupplier_searchSuppliers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISupplier/searchSuppliersResponse" message="tns:ISupplier_searchSuppliers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="seeDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISupplier/seeDetails" message="tns:ISupplier_seeDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISupplier/seeDetailsResponse" message="tns:ISupplier_seeDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="modify">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISupplier/modify" message="tns:ISupplier_modify_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISupplier/modifyResponse" message="tns:ISupplier_modify_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISupplier/delete" message="tns:ISupplier_delete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISupplier/deleteResponse" message="tns:ISupplier_delete_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ISupplier" type="tns:ISupplier">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getSupplier">
+      <soap:operation soapAction="http://tempuri.org/ISupplier/getSupplier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchSuppliers">
+      <soap:operation soapAction="http://tempuri.org/ISupplier/searchSuppliers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="seeDetails">
+      <soap:operation soapAction="http://tempuri.org/ISupplier/seeDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modify">
+      <soap:operation soapAction="http://tempuri.org/ISupplier/modify" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <soap:operation soapAction="http://tempuri.org/ISupplier/delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SupplierService">
+    <wsdl:port name="BasicHttpBinding_ISupplier" binding="tns:BasicHttpBinding_ISupplier">
+      <soap:address location="http://localhost:50124/SupplierService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

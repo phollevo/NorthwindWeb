@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace NorthwindWeb.Controllers
 {
-    public class CatController : Controller
+    public class CategoryController : Controller
     {
 
 
@@ -21,6 +21,18 @@ namespace NorthwindWeb.Controllers
                 return View("~/Views/Cat/CategoryRem.cshtml");
             }
             //return View("~/Views/Home/SupplierRem.cshtml");
+        }
+
+
+        public ActionResult AddCategory()
+        {
+
+            return View("~/Views/Category/CategoryAdd.cshtml");
+        }
+
+        public ActionResult DelCategory()
+        {
+            return View("~/Views/Category/CategoryRem.cshtml");
         }
     }
 }

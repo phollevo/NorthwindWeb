@@ -13,23 +13,23 @@ namespace NorthwindWeb
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute(
-                name: "Product",
-                url: "Product/{AccessType}",
-                defaults: new { controller = "Product", action = "ProductRedirect", id = UrlParameter.Optional }
-            );
+            //routes.MapRoute(
+            //    name: "Product",
+            //    url: "Product/{AccessType}",
+            //    defaults: new { controller = "Product", action = "ProductRedirect", id = UrlParameter.Optional }
+            //);
 
-            routes.MapRoute(
-                name: "Cat",
-                url: "Cat/{AccessType}",
-                defaults: new { controller = "Cat", action = "CatRedirect", id = UrlParameter.Optional }
-            );
+            //routes.MapRoute(
+            //    name: "Cat",
+            //    url: "Cat/{AccessType}",
+            //    defaults: new { controller = "Cat", action = "CatRedirect", id = UrlParameter.Optional }
+            //);
 
-            routes.MapRoute(
-                name: "Supplier",
-                url: "Supplier/{AccessType}",
-                defaults: new { controller = "Supplier", action = "SupplierRedirect", id = UrlParameter.Optional }
-            );
+            //routes.MapRoute(
+            //    name: "Supplier",
+            //    url: "Supplier/{AccessType}",
+            //    defaults: new { controller = "Supplier", action = "SupplierRedirect", id = UrlParameter.Optional }
+            //);
 
             routes.MapRoute(
                 name: "Default",
