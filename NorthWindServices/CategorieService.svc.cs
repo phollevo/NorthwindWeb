@@ -12,34 +12,61 @@ namespace NorthWindServices
     // NOTE: In order to launch WCF Test Client for testing this service, please select CategorieService.svc or CategorieService.svc.cs at the Solution Explorer and start debugging.
     public class CategorieService : ICategorie
     {
-        DatabaseContext context = new DatabaseContext();
-        public bool delete(int id)
+        NorthwindEntities secondContext = new NorthwindEntities();
+        public bool delete(long id)
         {
-            context.Categories.Remove(getCategorie(id));
+
+            secondContext.Categories.Remove(getNorthCategory(getCategorie(id)));
             return true;
         }
 
-        public Libraries.Categorie getCategorie(int Id)
+        public Categorie getCategorie(long Id)
         {
-            return context.Categories.Find(Id);
+            return getLibCategorie(secondContext.Categories.Find(Id));
 
         }
 
         public bool modify(Libraries.Categorie categorie)
         {
-            context.Categories.Remove(getCategorie(categorie.id));
-            context.Categories.Add(categorie);
+            secondContext.Categories.Remove(getNorthCategory(getCategorie(categorie.id)));
+            secondContext.Categories.Add(getNorthCategory(categorie));
             return true;
         }
 
         public List<Libraries.Categorie> searchCategories(string pattern)
         {
-            return context.Categories.Where(c => c.name.Contains(pattern)).ToList<Libraries.Categorie>();
+            List<Category> myList=secondContext.Categories.Where(c => c.CategoryName.Contains(pattern)).ToList<Category>();
+            List<Categorie> returnList= new List<Categorie>();
+            foreach(Category cat in myList)
+            {
+                returnList.Add(getLibCategorie(cat));
+            }
+            return returnList;
         }
 
-        public Libraries.Categorie seeDetails(int Id)
+        public Libraries.Categorie seeDetails(long Id)
         {
-            return context.Categories.Find(Id);
+            return getLibCategorie(secondContext.Categories.Find(Id));
+        }
+
+        public Libraries.Categorie getLibCategorie(Category northCategorie)
+        {
+            return new Categorie
+            {
+                description = northCategorie.Description,
+                id = northCategorie.CategoryID,
+                name = northCategorie.CategoryName
+            };
+        }
+
+        public Category getNorthCategory(Categorie categorie)
+        {
+            return new Category
+            {
+                CategoryID = categorie.id,
+                CategoryName = categorie.name,
+                Description = categorie.description
+            };
         }
     }
 }

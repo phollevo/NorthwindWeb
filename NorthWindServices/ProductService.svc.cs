@@ -12,40 +12,75 @@ namespace NorthWindServices
     // NOTE: In order to launch WCF Test Client for testing this service, please select ProductService.svc or ProductService.svc.cs at the Solution Explorer and start debugging.
     public class ProductService : IProduct
     {
-        DatabaseContext context = new DatabaseContext();
+        NorthwindEntities context = new NorthwindEntities();
 
         public bool addProduct(Libraries.Product product)
         {
-            context.Products.Add(product);
+            context.Products.Add(getNorthProduct(product));
             return true;
         }
 
-        public bool delete(int id)
+        public bool delete(long id)
         {
-            context.Products.Remove(getProduct(id));
+            context.Products.Remove(getNorthProduct(getProduct(id)));
             return true;
         }
 
-        public Libraries.Product getProduct(int Id)
+        public Libraries.Product getProduct(long Id)
         {
-            return context.Products.Find(Id);
+            return getLibProduct(context.Products.Find(Id));
         }
 
         public bool modify(Libraries.Product product)
         {
-            context.Products.Remove(getProduct(product.id));
-            context.Products.Add(product);
+            context.Products.Remove(getNorthProduct(getProduct(product.id)));
+            context.Products.Add(getNorthProduct(product));
             return true;
         }
 
         public List<Libraries.Product> searchProducts(string pattern)
         {
-            return context.Products.Where(c => c.name.Contains(pattern)).ToList<Libraries.Product>();
+            List<Product> myList = context.Products.Where(c => c.ProductName.Contains(pattern)).ToList<Product>();
+            List<Libraries.Product> returnList = new List<Libraries.Product>();
+            foreach (Product cat in myList)
+            {
+                returnList.Add(getLibProduct(cat));
+            }
+            return returnList;
         }
 
-        public Libraries.Product seeDetails(int Id)
+        public Libraries.Product seeDetails(long Id)
         {
-            return context.Products.Find(Id);
+            return getLibProduct(context.Products.Find(Id));
+        }
+
+        public Libraries.Product getLibProduct(NorthWindServices.Product northProduct)
+        {
+            return new Libraries.Product
+            {
+                categorie = (long) northProduct.CategoryID,
+                discontinued = northProduct.Discontinued,
+                id = northProduct.ProductID,
+                name = northProduct.ProductName,
+                quantityPerUnit = northProduct.QuantityPerUnit,
+                reorderLevel =(long) northProduct.ReorderLevel,
+                supplier =(long) northProduct.SupplierID,
+
+            };
+        }
+
+        public NorthWindServices.Product getNorthProduct(Libraries.Product product)
+        {
+            return new Product
+            {
+                CategoryID = product.categorie,
+                Discontinued = product.discontinued,
+                ProductID = product.id,
+                ProductName = product.name,
+                QuantityPerUnit = product.quantityPerUnit,
+                ReorderLevel = product.reorderLevel,
+                SupplierID = product.supplier
+            };
         }
     }
 }

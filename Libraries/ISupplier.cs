@@ -14,18 +14,18 @@ namespace Libraries
         bool addSupplier(Supplier supplier);
 
         [OperationContract]
-        Supplier getSupplier(int Id);
+        Supplier getSupplier(long Id);
 
         [OperationContract]
         List<Supplier> searchSuppliers(string pattern);
 
         [OperationContract]
-        Supplier seeDetails(int Id);
+        Supplier seeDetails(long Id);
 
         [OperationContract]
         Boolean modify(Supplier supplier);
 
         [OperationContract]
-        Boolean delete(int id);
+        Boolean delete(long id);
     }
 }

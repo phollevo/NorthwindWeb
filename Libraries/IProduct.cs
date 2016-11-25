@@ -11,13 +11,13 @@ namespace Libraries
     public interface IProduct
     {
         [OperationContract]
-        Product getProduct(int Id);
+        Product getProduct(long Id);
 
         [OperationContract]
         List<Product> searchProducts(string pattern);
 
         [OperationContract]
-        Product seeDetails(int Id);
+        Product seeDetails(long Id);
 
         [OperationContract]
         Boolean modify(Product product);
@@ -26,6 +26,6 @@ namespace Libraries
         bool addProduct(Product product);
 
         [OperationContract]
-        Boolean delete(int id);
+        Boolean delete(long id);
     }
 }

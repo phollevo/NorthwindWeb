@@ -11,7 +11,7 @@ namespace Libraries
     public class Categorie
     {
         [DataMember]
-        public int id { get; set; }
+        public long id { get; set; }
 
         [DataMember]
         public string name { get; set; }

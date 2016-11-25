@@ -11,18 +11,18 @@ namespace Libraries
     public interface ICategorie
     {
         [OperationContract]
-        Categorie getCategorie(int Id);
+        Categorie getCategorie(long Id);
 
         [OperationContract]
         List<Categorie> searchCategories(string pattern);
 
         [OperationContract]
-        Categorie seeDetails(int Id);
+        Categorie seeDetails(long Id);
 
         [OperationContract]
         Boolean modify(Categorie categorie);
 
         [OperationContract]
-        Boolean delete(int id);
+        Boolean delete(long id);
     }
 }

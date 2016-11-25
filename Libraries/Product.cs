@@ -11,24 +11,24 @@ namespace Libraries
     public class Product
     {
         [DataMember]
-        public int id { get; set; }
+        public long id { get; set; }
 
         [DataMember]
         public string name { get; set; }
 
         [DataMember]
-        public Categorie categorie { get; set; }
+        public long categorie { get; set; }
 
         [DataMember]
-        public Supplier supplier { get; set; }
+        public long supplier { get; set; }
 
         [DataMember]
         public string quantityPerUnit { get; set; }
 
         [DataMember]
-        public int reorderLevel{ get; set;}
+        public long reorderLevel{ get; set;}
 
         [DataMember]
-        public bool discontinued { get; set; }
+        public string discontinued { get; set; }
     }
 }
