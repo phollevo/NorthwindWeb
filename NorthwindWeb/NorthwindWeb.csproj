@@ -187,7 +187,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service References\ServiceReference1\Reference.cs">
+    <Compile Include="Service References\Libraries\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -216,10 +216,13 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <None Include="Service References\ServiceReference1\SupplierService.disco" />
-    <None Include="Service References\ServiceReference1\configuration91.svcinfo" />
-    <None Include="Service References\ServiceReference1\configuration.svcinfo" />
-    <None Include="Service References\ServiceReference1\Reference.svcmap">
+    <Content Include="Service References\Libraries\NorthwindWeb.Libraries.Supplier.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\Libraries\SupplierService.disco" />
+    <None Include="Service References\Libraries\configuration91.svcinfo" />
+    <None Include="Service References\Libraries\configuration.svcinfo" />
+    <None Include="Service References\Libraries\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -265,14 +268,14 @@
     <Content Include="Views\Supplier\SupplierAdd.cshtml" />
     <Content Include="Views\Product\ProductRem.cshtml" />
     <Content Include="Views\Category\CategoryRem.cshtml" />
-    <None Include="Service References\ServiceReference1\SupplierService.wsdl" />
-    <None Include="Service References\ServiceReference1\SupplierService.xsd">
+    <None Include="Service References\Libraries\SupplierService.wsdl" />
+    <None Include="Service References\Libraries\SupplierService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ServiceReference1\SupplierService1.xsd">
+    <None Include="Service References\Libraries\SupplierService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ServiceReference1\SupplierService2.xsd">
+    <None Include="Service References\Libraries\SupplierService2.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
@@ -292,17 +295,11 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Libraries\Libraries.csproj">
-      <Project>{0e0101e3-8ab7-41f3-a6ba-d4d7feed27ba}</Project>
-      <Name>Libraries</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <WCFMetadata Include="Service References\" />
     <EmbeddedResource Include="App_LocalResources\Index.resx" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\ServiceReference1\" />
+    <WCFMetadataStorage Include="Service References\Libraries\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

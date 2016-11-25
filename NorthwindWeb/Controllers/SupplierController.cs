@@ -12,7 +12,7 @@ namespace NorthwindWeb.Controllers
         [HttpPost]
         public ActionResult Search(String search)
         {
-            ServiceReference1.SupplierClient Client = new ServiceReference1.SupplierClient();
+            Libraries.SupplierClient Client = new Libraries.SupplierClient();
             var suppliers = Client.searchSuppliers(search);
 
             return View("~/Views/Supplier/SupplierSearch.cshtml", suppliers);

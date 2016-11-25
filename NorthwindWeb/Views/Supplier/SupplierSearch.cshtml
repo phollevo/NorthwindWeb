@@ -1,4 +1,4 @@
-﻿@model List<Libraries.Supplier>
+﻿@model NorthwindWeb.Libraries.Supplier[]
 
 @*@{
     ViewBag.Title = "About";
@@ -32,9 +32,9 @@
                 foreach (var s in Model )
                 {
                     <tr>
-                        <td>s.name</td>
-                        <td>s.contactName</td>
-                        <td>s.country</td>
+                        <td>@s.name</td>
+                        <td>@s.contactName</td>
+                        <td>@s.country</td>
                         <td>TODO</td>
                     </tr>
                 }

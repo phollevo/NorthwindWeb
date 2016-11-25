@@ -4,4 +4,15 @@
 
 
 
-<h1>Detail d'un fournisseur</h1>
+<div class="jumbotron">
+    <h1>Ajouter un fournisseur</h1>
+
+    @using (Html.BeginForm("Add", "Supplier", FormMethod.Post))
+    {
+        <div class="thumbnail">
+            Nom : @Html.TextBox("search")
+            <input type="submit" value="Search" />
+
+        </div>
+    }
+</div>

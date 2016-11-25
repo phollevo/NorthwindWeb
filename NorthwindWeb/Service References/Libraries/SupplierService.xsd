@@ -1,17 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://localhost:50124/SupplierService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Libraries" />
+  <xs:import schemaLocation="http://172.20.2.89/SupplierService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Libraries" />
+  <xs:element name="addSupplier">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Libraries" minOccurs="0" name="supplier" nillable="true" type="q1:Supplier" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addSupplierResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="addSupplierResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="getSupplier">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="Id" type="xs:int" />
+        <xs:element minOccurs="0" name="Id" type="xs:long" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="getSupplierResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Libraries" minOccurs="0" name="getSupplierResult" nillable="true" type="q1:Supplier" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Libraries" minOccurs="0" name="getSupplierResult" nillable="true" type="q2:Supplier" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -25,28 +39,28 @@
   <xs:element name="searchSuppliersResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Libraries" minOccurs="0" name="searchSuppliersResult" nillable="true" type="q2:ArrayOfSupplier" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Libraries" minOccurs="0" name="searchSuppliersResult" nillable="true" type="q3:ArrayOfSupplier" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="seeDetails">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="Id" type="xs:int" />
+        <xs:element minOccurs="0" name="Id" type="xs:long" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="seeDetailsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Libraries" minOccurs="0" name="seeDetailsResult" nillable="true" type="q3:Supplier" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Libraries" minOccurs="0" name="seeDetailsResult" nillable="true" type="q4:Supplier" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="modify">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Libraries" minOccurs="0" name="supplier" nillable="true" type="q4:Supplier" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Libraries" minOccurs="0" name="supplier" nillable="true" type="q5:Supplier" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -60,7 +74,7 @@
   <xs:element name="delete">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="id" type="xs:long" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
