@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Libraries
 {
+    [ServiceContract]
     public interface ICategorie
     {
         [OperationContract]

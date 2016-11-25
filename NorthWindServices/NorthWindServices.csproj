@@ -120,6 +120,7 @@
       <DependentUpon>NorthWindBDD.edmx</DependentUpon>
       <LastGenOutput>NorthWindBDD.cs</LastGenOutput>
     </Content>
+    <Content Include="ProductService.svc" />
     <Content Include="SupplierService.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -187,6 +188,9 @@
     </Compile>
     <Compile Include="Product.cs">
       <DependentUpon>NorthWindBDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductService.svc.cs">
+      <DependentUpon>ProductService.svc</DependentUpon>
     </Compile>
     <Compile Include="Products_Above_Average_Price.cs">
       <DependentUpon>NorthWindBDD.tt</DependentUpon>

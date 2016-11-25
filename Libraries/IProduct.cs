@@ -8,22 +8,22 @@ using System.Threading.Tasks;
 namespace Libraries
 {
     [ServiceContract]
-    public interface ISupplier
+    public interface IProduct
     {
         [OperationContract]
-        bool addSupplier(Supplier supplier);
+        Product getProduct(int Id);
 
         [OperationContract]
-        Supplier getSupplier(int Id);
+        List<Product> searchProducts(string pattern);
 
         [OperationContract]
-        List<Supplier> searchSuppliers(string pattern);
+        Product seeDetails(int Id);
 
         [OperationContract]
-        Supplier seeDetails(int Id);
+        Boolean modify(Product product);
 
         [OperationContract]
-        Boolean modify(Supplier supplier);
+        bool addProduct(Product product);
 
         [OperationContract]
         Boolean delete(int id);
