@@ -12,23 +12,21 @@ namespace NorthWindServices
     // NOTE: In order to launch WCF Test Client for testing this service, please select CategorieService.svc or CategorieService.svc.cs at the Solution Explorer and start debugging.
     public class CategorieService : ICategorie
     {
+        DatabaseContext context = new DatabaseContext();
         public bool delete(int id)
         {
-            var context = new DatabaseContext();
             context.Categories.Remove(getCategorie(id));
             return true;
         }
 
         public Libraries.Categorie getCategorie(int Id)
         {
-            var context = new DatabaseContext();
             return context.Categories.Find(Id);
 
         }
 
         public bool modify(Libraries.Categorie categorie)
         {
-            var context = new DatabaseContext();
             context.Categories.Remove(getCategorie(categorie.id));
             context.Categories.Add(categorie);
             return true;
@@ -36,13 +34,12 @@ namespace NorthWindServices
 
         public List<Libraries.Categorie> searchCategories(string pattern)
         {
-            var context = new DatabaseContext();
             return context.Categories.Where(c => c.name.Contains(pattern)).ToList<Libraries.Categorie>();
         }
 
         public Libraries.Categorie seeDetails(int Id)
         {
-            throw new NotImplementedException();
+            return context.Categories.Find(Id);
         }
     }
 }
